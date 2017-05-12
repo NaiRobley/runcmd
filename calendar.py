@@ -1,7 +1,8 @@
 class Calendar(object):
     def __init__(self):
         self.calendars = {
-                            'first_calendar': ['first_event']
+                            'first_calendar': ['first_event', 'second_event'],
+                            'second_calendar':['first_event','second_event']
                             }
 
     def create_calendar(self,calendar_name):
@@ -17,11 +18,19 @@ class Calendar(object):
         self.calendars[calendar_name].append(event_name)
         print("New event has been added")
 
-    def see_events(self):
+    def see_events(self, cal_name):
         """Naomi"""
-        pass
-
+        #gets the calendar name
+        #gets the events as per that calendar
+        #prints out the events for the calendar
+        try:
+            events=self.calendars[cal_name]
+            print("The events are:")
+            for event in events:
+                print("{}".format(event))
+        except KeyError:
+            print("Sorry, the calendar name does not exist")
     def view_last_event(self):
         """Idd"""
         pass
-        
+
