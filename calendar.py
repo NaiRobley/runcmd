@@ -17,11 +17,8 @@ class Calendar(object):
         print("\tNew event {0} has been added to the calendar {1}".format(event_name, calendar_name))
         print('')
 
-    def see_events(self, cal_name):
+    def see_events(self):
         """Naomi"""
-        #gets the calendar name
-        #gets the events as per that calendar
-        #prints out the events for the calendar
         print('')
         try:
             events=self.calendars[cal_name]
@@ -34,10 +31,7 @@ class Calendar(object):
         except KeyError:
             print("\tSorry, the calendar name does not exist")
         print('')
-
-#################################################################################################################################
-############# CALENDAR TEAM PROJECT: IDD-HANDLING VIEW LAST EVENT IN THE CALENDAR ###############################################
-#################################################################################################################################
+        
     def view_last_event(self, cal_name):
         """get calendar and find events in the calendar, return last event"""
         # calendar_name=self.calendar_name
