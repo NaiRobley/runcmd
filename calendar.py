@@ -4,13 +4,18 @@ class Calendar(object):
                             'first_calendar': ['first_event']
                             }
 
-    def create_calendar(self):
+    def create_calendar(self,calendar_name):
         """Ledduh"""
-        pass
+        self.calendars[calendar_name] = []
+        print("New calendar has been created") 
+        return self.calendars 
 
-    def add_event(self):
+
+
+    def add_event(self, calendar_name, event_name):
         """Ledduh"""
-        pass
+        self.calendars[calendar_name].append(event_name)
+        print("New event has been added")
 
     def see_events(self):
         """Naomi"""
@@ -19,3 +24,4 @@ class Calendar(object):
     def view_last_event(self):
         """Idd"""
         pass
+        
