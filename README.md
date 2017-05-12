@@ -39,7 +39,7 @@ python main.py -i
 
 ## Built With
 
-* [Docopt](http://www.dropwizard.io/1.0.2/docs/) - The CLI framework used
+* [Docopt](http://www.docopt.org/) - The CLI framework used
 
 ## Contributors
 
