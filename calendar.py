@@ -1,20 +1,34 @@
 class Calendar(object):
     def __init__(self):
         self.calendars = {
-                            'first_calendar': ['first_event', 'second_event', 'third_event'], 'calendar2': ['event1', 'event2', 'event3']
+                            'first_calendar': ['first_event', 'second_event'],
+                            'second_calendar':['first_event','second_event']
                             }
 
-    def create_calendar(self):
+    def create_calendar(self,calendar_name):
         """Ledduh"""
-        pass
+        self.calendars[calendar_name] = []
+        print("New calendar has been created") 
+        return self.calendars 
 
-    def add_event(self):
+    def add_event(self, calendar_name, event_name):
         """Ledduh"""
-        pass
+        self.calendars[calendar_name].append(event_name)
+        print("New event has been added")
 
-    def see_events(self):
+    def see_events(self, cal_name):
         """Naomi"""
-        pass
+        #gets the calendar name
+        #gets the events as per that calendar
+        #prints out the events for the calendar
+        try:
+            events=self.calendars[cal_name]
+            print("The events are:")
+            for event in events:
+                print("{}".format(event))
+        except KeyError:
+            print("Sorry, the calendar name does not exist")
+
 #################################################################################################################################
 ############# CALENDAR TEAM PROJECT: IDD-HANDLING VIEW LAST EVENT IN THE CALENDAR ###############################################
 #################################################################################################################################
@@ -31,7 +45,3 @@ class Calendar(object):
         	print (last_event)
         	return last_event
 
-newCal = Calendar()
-newCal.view_last_event('first_calendar')
-newCal.view_last_event('calendar2')
-newCal.view_last_event('another')
