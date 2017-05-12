@@ -15,7 +15,7 @@ The requirements are in the `requirements.txt` file
 Clone the repo:
 
 ```
-git clone https://
+git clone https://github.com/NaiRobley/runcmd
 ```
 
 Create your virtual environment
