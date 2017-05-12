@@ -86,28 +86,24 @@ class OurCalendar(cmd.Cmd):
     @docopt_cmd
     def do_see_calendars(self, args):
         """Usage: see_calendars"""
-        print("This are the current calendars in the system")
-        for cal in new_calendar.calendars.keys():
-            print(cal)
+        if new_calendar.calendars.keys():
+            print("\tThis are the calendars available in the system:")
+            for cal in new_calendar.calendars.keys():
+                print("\t\t{}".format(cal))
+        else:
+            print("\n\tThere are no calendars in the system yet\n\tPlease add one and try again\n")
 
     @docopt_cmd
     def do_see_events(self, args):
         """Usage: see_events <calendar_name>"""
         calendar_name = args["<calendar_name>"]
         new_calendar.see_events(calendar_name)
-        # print("These are the events in the calendar {}".format(calendar_name))
-
-    @docopt_cmd
-    def do_see_last_event(self, args):
-        """Usage: view_last_event <calendar_name>"""
-        calendar_name = args["<calendar_name>"]
-        print("This is the last event in the calendar {}".format(calendar_name))
 
     @docopt_cmd
     def do_view_last_event(self, args):
         """Usage: view_last_event <calendar_name>"""
         calendar_name = args["<calendar_name>"]
-        print("The last event in the calendar {} is: LastEvent ".format(calendar_name))
+        new_calendar.view_last_event(calendar_name)
 
     def do_quit(self, args):
         """Quits out of Interactive Mode."""
