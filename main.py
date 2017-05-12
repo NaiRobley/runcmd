@@ -73,19 +73,22 @@ class OurCalendar(cmd.Cmd):
     def do_create_calendar(self, args):
         """Usage: create_calendar <calendar_name>"""
         calendar_name = args["<calendar_name>"]
-        print("You have provided the following calendar name: {}".format(calendar_name))
+        new_calendar.create_calendar(calendar_name)
 
     @docopt_cmd
     def do_add_event(self, args):
         """Usage: add_event <calendar_name> <event_name>"""
         calendar_name = args["<calendar_name>"]
         event_name = args["<event_name>"]
-        print("You have added the event {0} to the calendar {1}".format(event_name, calendar_name))
+        new_calendar.add_event(calendar_name, event_name)
+        # print("You have added the event {0} to the calendar {1}".format(event_name, calendar_name))
 
     @docopt_cmd
     def do_see_calendars(self, args):
         """Usage: see_calendars"""
         print("This are the current calendars in the system")
+        for cal in new_calendar.calendars.keys():
+            print(cal)
 
     @docopt_cmd
     def do_see_events(self, args):
