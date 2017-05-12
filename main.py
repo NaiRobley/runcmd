@@ -91,7 +91,8 @@ class OurCalendar(cmd.Cmd):
     def do_see_events(self, args):
         """Usage: see_events <calendar_name>"""
         calendar_name = args["<calendar_name>"]
-        print("These are the events in the calendar {}".format(calendar_name))
+        new_calendar.see_events(calendar_name)
+        # print("These are the events in the calendar {}".format(calendar_name))
 
     @docopt_cmd
     def do_see_last_event(self, args):
